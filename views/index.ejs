@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Home' }) %>
+
+  <body>
+    <%- include('partials/nav') %>
+      <header class="hero">
+        <p class="pill">HW 4</p>
+        <h1>Computing Topics</h1>
+        <p>Explore the software ideas that help computers, applications, and mobile devices work together.</p>
+      </header>
+      <main>
+        <section class="content-card">
+          <h2>Welcome</h2>
+          <p>This site revisits my original HTML and CSS HW1 using Express, EJS views, and shared partials. Use the
+            navigation menu to explore four computing topics.</p>
+          <p class="note">The final two pages demonstrate actual data from a Node package and a backend Web API.</p>
+        </section>
+        <section class="topic-grid">
+          <a class="topic-card" href="/operating-systems">
+            <h2>Operating Systems</h2>
+            <p>The foundation that manages hardware and applications.</p>
+          </a>
+          <a class="topic-card" href="/programming-languages">
+            <h2>Programming Languages</h2>
+            <p>The tools developers use to write instructions.</p>
+          </a>
+          <a class="topic-card" href="/databases">
+            <h2>Databases</h2>
+            <p>Organized information that applications can use.</p>
+          </a>
+          <a class="topic-card" href="/mobile-app-development">
+            <h2>Mobile Apps</h2>
+            <p>Software designed for phones and tablets.</p>
+          </a>
+        </section>
+      </main>
+      <%- include('partials/footer') %>
+  </body>
+
+</html>

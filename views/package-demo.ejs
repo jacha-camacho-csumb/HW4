@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Node Package Demo' }) %>
+
+  <body>
+    <%- include('partials/nav') %>
+
+      <header class="page-header">
+        <p class="pill">Node package data</p>
+        <h1>System Information</h1>
+      </header>
+
+      <main>
+        <section class="content-card">
+          <h2>Real operating-system information</h2>
+
+          <p>
+            This page uses the <strong>systeminformation</strong> Node package
+            in <code>index.mjs</code>. It reads actual information from the
+            computer running this Express app.
+          </p>
+
+          <div class="weather-grid">
+            <div>
+              <span>Operating system</span>
+              <strong>
+                <%= os.distro %>
+              </strong>
+              <small>
+                <%= os.release %>
+              </small>
+            </div>
+
+            <div>
+              <span>CPU</span>
+              <strong>
+                <%= cpu.manufacturer %>
+              </strong>
+              <small>
+                <%= cpu.brand %>
+              </small>
+            </div>
+
+            <div>
+              <span>Memory used</span>
+              <strong>
+                <%= (memory.used / 1024 / 1024 / 1024).toFixed(2) %> GB
+              </strong>
+              <small>
+                of <%= (memory.total / 1024 / 1024 / 1024).toFixed(2) %> GB
+              </small>
+            </div>
+          </div>
+
+          <p>
+            <strong>Computer:</strong>
+            <%= system.manufacturer %>
+              <%= system.model %>
+          </p>
+
+          <p>
+            <strong>Architecture:</strong>
+            <%= os.arch %>
+              · <strong>Hostname:</strong>
+              <%= os.hostname %>
+          </p>
+        </section>
+      </main>
+
+      <%- include('partials/footer') %>
+  </body>
+
+</html>

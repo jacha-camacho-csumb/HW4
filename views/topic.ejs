@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: topic.title }) %>
+
+  <body>
+    <%- include('partials/nav') %>
+      <header class="page-header">
+        <p class="pill">Computing topic</p>
+        <h1>
+          <%= topic.title %>
+        </h1>
+      </header>
+      <main>
+        <section class="intro content-card">
+          <h2>What is it?</h2>
+          <p>
+            <%= topic.intro %>
+          </p>
+        </section>
+        <figure class="graphics"><img src="<%= topic.image %>" alt="Illustration for <%= topic.title %>">
+          <figcaption>
+            <%= topic.title %> in the computing environment
+          </figcaption>
+        </figure>
+        <section>
+          <h2>Key ideas</h2>
+          <div class="topic-grid">
+            <% topic.cards.forEach(card=> { %><article class="topic-card">
+                <h3>
+                  <%= card[0] %>
+                </h3>
+                <p>
+                  <%= card[1] %>
+                </p>
+              </article>
+              <% }) %>
+          </div>
+        </section>
+        <section class="content-card">
+          <h2>How it connects</h2>
+          <p>These ideas work together: operating systems provide a foundation, programming languages create software,
+            databases store information, and mobile development brings software to handheld devices.</p>
+        </section>
+      </main>
+      <%- include('partials/footer') %>
+  </body>
+
+</html>

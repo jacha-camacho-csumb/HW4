@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Web API Demo' }) %>
+
+  <body>
+    <%- include('partials/nav') %>
+      <header class="page-header">
+        <p class="pill">Backend Web API data</p>
+        <h1>Monterey Weather</h1>
+      </header>
+      <main>
+        <section class="content-card">
+          <h2>Current conditions from Open-Meteo</h2>
+          <p>This page uses the <strong>Open-Meteo Web API</strong>. The request is made in the backend in
+            <code>index.mjs</code>, and the returned data is rendered by this EJS view.</p>
+          <div class="weather-grid">
+            <div><span>Temperature</span><strong>
+                <%= weather.current.temperature_2m %> °F
+              </strong></div>
+            <div><span>Humidity</span><strong>
+                <%= weather.current.relative_humidity_2m %> %
+              </strong></div>
+            <div><span>Wind speed</span><strong>
+                <%= weather.current.wind_speed_10m %> mph
+              </strong></div>
+          </div>
+          <p class="note">Location: Monterey, California · Updated: <%= weather.current.time %>
+          </p>
+        </section>
+      </main>
+      <%- include('partials/footer') %>
+  </body>
+
+</html>
